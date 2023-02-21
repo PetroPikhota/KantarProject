@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using KantarProject.Controllers
+@{
+
+    ViewData["Title"] = "Home Page";
+}
+<form method='post'>
+    <label>Add number to sort:</label><br />
+    <input name='SortData' pattern="[\d ]*" /><br /><br />
+    <input id="IsReverse" name="IsReverse" type="checkbox" value="true">
+    <label for="IsReverse">Reverse </label>     
+    <br /><br />
+    <input type='submit' value='Sort Data' />
+</form>
+<br />
+@if (ViewData["SortedData"]!=null && !String.IsNullOrEmpty(ViewData["SortedData"].ToString()))
+{
+    <h3>@ViewData["SortedData"]</h3>
+}
